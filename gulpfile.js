@@ -73,5 +73,6 @@ gulp.task('watch',function(){
 gulp.task('default', [
     'styles',
     'markup',
-    'watch'
+    'watch',
+    'server'
 ]);

@@ -1,0 +1,126 @@
+{
+    "projectinfo" : {
+        "title" : "Cancer Journal",
+        "tagline" : "Take control of your journey"
+    },
+    "posttypes": {
+        "post" : {
+            "title" : "Post",
+            "fields" : {
+                "title" : {
+                    "type" : "text",
+                    "id" : "title",
+                    "title" : "Title"
+                },
+                "date" : {
+                    "type" : "date",
+                    "id" : "date",
+                    "title" : "Date"
+                },
+                "desc" : {
+                    "type" : "textarea",
+                    "id" : "desc",
+                    "title" : "Description"
+                }
+            }
+        },
+        "appt": {
+            "title" : "Appointment",
+            "fields" : {
+                "title" : {
+                    "type" : "text",
+                    "id" : "title",
+                    "title" : "Title"
+                },
+                "date" : {
+                    "type" : "date",
+                    "id" : "date",
+                    "title" : "Date"
+                },
+                "location" : {
+                    "type" : "input",
+                    "id" : "location",
+                    "title" : "Location"
+                }
+            }
+        },
+        "mood": {
+            "title" : "Mood",
+            "fields" : {
+                "title" : {
+                    "type" : "text",
+                    "id" : "title",
+                    "title" : "Title"
+                },
+                "date" : {
+                    "type" : "date",
+                    "id" : "date",
+                    "title" : "Date"
+                },
+                "desc" : {
+                    "type" : "texteara",
+                    "id" : "desc",
+                    "title" : "Description"
+                },
+                "emoji" : {
+                    "type" : "text",
+                    "id" : "emoji",
+                    "title" : "Emoji"
+                }
+            }
+        },
+        "store": {
+            "title" : "Store",
+            "fields" : {
+                "title" : {
+                    "type" : "text",
+                    "id" : "title",
+                    "title" : "Title"
+                },
+                "date" : {
+                    "type" : "date",
+                    "id" : "date",
+                    "title" : "Date"
+                },
+                "type" : {
+                    "type" : "input",
+                    "id" : "type",
+                    "title" : "Type"
+                },
+                 "file" : {
+                    "type" : "file",
+                    "id" : "file",
+                    "title" : "File"
+                }
+            }
+        }
+    },
+    "entries" : [
+        {
+            "title" : "doctor appointment",
+            "category" : "appt",
+            "date" : "10/2/13",
+            "location" : "google campus"
+        },
+        {
+            "title" : "test results",
+            "category" : "store",
+            "date" : "10/2/13",
+            "type" : "blood test",
+            "file" : "scan.jpg"
+        },
+        {
+            "title" : "I'm feeling great today",
+            "date" : "10/2/13",
+            "category" : "mood",
+            "desc" : "Had a great result today, feel much better",
+            "emoji" : ":)"
+        },
+        {
+            "title" : "Getting used to blood tests",
+            "date" : "10/2/13",
+            "category" : "post",
+            "desc" : "I always hated needles, but am gradually getting used to them"
+        }
+    ]
+}

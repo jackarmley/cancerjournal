@@ -8,6 +8,7 @@
  */
 
 .layoutwrap{
+    position: relative;
     width: auto;
     max-width: 60rem;
     margin: auto;
@@ -24,6 +25,7 @@ $optionsize: 6rem;
     position: fixed;
     bottom: $optionsize;
     left: 50%;
+    z-index: 10;
     margin-left: -($optionsize / 2);
     ul{
         list-style: none;
@@ -55,12 +57,23 @@ $optionsize: 6rem;
             &:nth-child(#{$l}n + #{$i}) a{
                 background: color( nth($options,$i) );
                 transition-delay: .1 * $i#{'s'};
+                &:before{
+                    background-image: url('../images/#{nth($options,$i)}.svg');
+                }
             }
             $i: $i + 1;
         }
         a{
             transition: all .1s ease;
             transform: scale(.5);
+            &:before{
+                @include setsize(100%);
+                content:' ';
+                display: block;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 70% auto;
+            }
         }
     }
     &.is-active{
@@ -86,20 +99,63 @@ $optionsize: 6rem;
  */
 .entry{
     margin-bottom: 2rem;
-    padding: 2rem;
-    border-radius: .5rem;
-    border-top: 1rem solid transparent;
-    background: white;
-    box-shadow: .5rem .5rem fade-out(black,.8);
-    & > :first-child{
-        margin-top: 0;
-    }
-    & > :last-child{
-        margin-bottom: 0;
+    overflow: hidden;
+    &-inner{
+        @extend %clearfix;
+        position: relative;
+        overflow: hidden;
+        padding: 2rem 2rem 2rem 6rem;
+        border-radius: .5rem;
+        background: white;
+        box-shadow: .5rem .5rem fade-out(black,.8);
+        & > :first-child{
+            margin-top: 0;
+        }
+        & > :last-child{
+            margin-bottom: 0;
+        }
+        &:before{
+            @include setsize(4rem 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content:' ';
+            display: block;
+            background: grey;
+        }
     }
     @each $option in $options{
         &.entry--cat-#{$option}{
-            border-top-color: color($option);
+            .entry-inner:before{
+                background: url('../images/#{$option}.svg') no-repeat 50% 3rem/3rem 3rem color($option) ;
+            }
         }
+    }
+    // Add entry
+    &--add{
+        max-height: 0;
+        margin-bottom: 0;
+        transition: all .5s ease;
+        &.is-active{
+            max-height: 100rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+/**
+ * Share
+ */
+.share-btn{
+    display: inline-block;
+    float: right;
+    &:before{
+        @include setsize(1.5em);
+        content:' ';
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: .5rem;
+        background: url('../images/share.svg');
     }
 }

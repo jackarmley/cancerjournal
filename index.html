@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-au"></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Cancer Journal - undefined</title>
+  <link rel="stylesheet" href="static/styles/styles.css">
+</head>
+<body class="default">
+  <header role="banner" class="page-header">
+    <div class="layoutwrap"><a href="./" class="site-logo">Cancer Journal</a>
+      <div class="profileinfo"><span class="profileinfo-name">Andrew</span></div>
+    </div>
+  </header>
+  <main role="main" class="page-content">
+    <div class="menu"><a role="button" href="" class="menu-trigger">+</a>
+      <ul>
+        <li class="menu-option"><a href="#" data-type="post"></a></li>
+        <li class="menu-option"><a href="#" data-type="appt"></a></li>
+        <li class="menu-option"><a href="#" data-type="mood"></a></li>
+        <li class="menu-option"><a href="#" data-type="store"></a></li>
+      </ul>
+    </div>
+    <div class="entries layoutwrap">
+      <h2>Andrew's story</h2>
+      <div data-type="post" class="entry entry--add post entry--cat-post">
+        <div class="entry-inner">
+          <h2>Post</h2>
+          <form>
+            <div class="fieldgroup">
+              <label for="title">Title</label>
+              <input type="text" id="title">
+            </div>
+            <div class="fieldgroup">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+            </div>
+            <div class="fieldgroup">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div data-type="appt" class="entry entry--add appt entry--cat-appt">
+        <div class="entry-inner">
+          <h2>Appointment</h2>
+          <form>
+            <div class="fieldgroup">
+              <label for="title">Title</label>
+              <input type="text" id="title">
+            </div>
+            <div class="fieldgroup">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+            </div>
+            <div class="fieldgroup">
+              <label for="location">Location</label>
+              <input type="input" id="location">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div data-type="mood" class="entry entry--add mood entry--cat-mood">
+        <div class="entry-inner">
+          <h2>Mood</h2>
+          <form>
+            <div class="fieldgroup">
+              <label for="title">Title</label>
+              <input type="text" id="title">
+            </div>
+            <div class="fieldgroup">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+            </div>
+            <div class="fieldgroup">
+              <label for="desc">Description</label>
+              <input type="texteara" id="desc">
+            </div>
+            <div class="fieldgroup">
+              <label for="emoji">Emoji</label>
+              <input type="text" id="emoji">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div data-type="store" class="entry entry--add store entry--cat-store">
+        <div class="entry-inner">
+          <h2>Store</h2>
+          <form>
+            <div class="fieldgroup">
+              <label for="title">Title</label>
+              <input type="text" id="title">
+            </div>
+            <div class="fieldgroup">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+            </div>
+            <div class="fieldgroup">
+              <label for="type">Type</label>
+              <input type="input" id="type">
+            </div>
+            <div class="fieldgroup">
+              <label for="file">File</label>
+              <input type="file" id="file">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="entry entry--cat-appt">
+        <div class="entry-inner">
+          <h2>doctor appointment</h2>
+          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        </div>
+      </div>
+      <div class="entry entry--cat-store">
+        <div class="entry-inner">
+          <h2>test results</h2>
+          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        </div>
+      </div>
+      <div class="entry entry--cat-mood">
+        <div class="entry-inner">
+          <h2>I'm feeling great today</h2>
+          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        </div>
+      </div>
+      <div class="entry entry--cat-post">
+        <div class="entry-inner">
+          <h2>Getting used to blood tests</h2>
+          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="static/scripts/jquery.js"></script>
+  <script src="static/scripts/handlebars.js"></script>
+  <script src="static/scripts/app.js"></script>
+</body>
