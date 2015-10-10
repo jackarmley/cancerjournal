@@ -1,0 +1,23 @@
+mixin challengecard(data)
+    article.challengecard
+        .challengecard-inner
+            .challengecard-author
+                p
+                    | Set by &nbsp;
+                    strong #{data.author}
+                img.challengecard-author-avatar(src='./static/images/#{data.avatar}.jpg' alt=data.title + ' avatar')
+            .challengecard-content
+                header.challengecard-header
+                    h2= data.title
+                    p #{data.activeparticipants} taking part!
+                ul.challengecard-meta
+                    li.icon-location= data.location
+                    li.icon-clock= data.time
+                    -if(data.participantlimit)
+                        li.icon-user #{data.participantlimit} opportunites
+                    -else
+                        li.icon-user unlimited!
+                p.challengecard-summary
+                    != data.description
+                a.challengecard-cta(role="button" href='')
+                    span Accept this challenge!

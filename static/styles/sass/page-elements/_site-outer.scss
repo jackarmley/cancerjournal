@@ -1,0 +1,37 @@
+/**
+ * Site outer
+ */
+
+/**
+ * Pass breakpoint string to
+ * head tag, so the mediaquery.js
+ * plugin can parse it
+ */
+head{
+    font-family: pointlist($breakpoints);
+}
+@function buildrhythm($rhythm){
+  $out: ' ';
+  $i: 0;
+  $l: length($rhythm);
+  @each $colour in $rhythm{
+    $out: $out + $colour;
+    @if $i < $l - 1{
+      $out: $out + ',';
+    }
+    $i: $i + 1;
+  }
+  @return $out;
+}
+html{
+    background: $plum;
+}
+.layoutwrap{
+    width: auto;
+    max-width: 100em;
+    margin: auto;
+    padding:{
+        right: 2rem;
+        left: 2rem;
+    };
+}

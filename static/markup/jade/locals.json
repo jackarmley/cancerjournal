@@ -1,0 +1,182 @@
+{
+    "projectinfo" : {
+        "title" : "Indeed",
+        "tagline" : "A crowd sourced kindness engine",
+        "tagline2" : "Think globally, act locally. For real"
+    },
+    "sitenavlinks": {
+        "map" : {
+            "title": "Kindness Map",
+            "url" : "./map.html",
+            "id" : "map",
+            "icon" : "location"
+        },
+         "mychallenges" : {
+            "title": "My Challenges",
+            "url" : "./",
+            "id" : "challenges",
+            "icon" : "user"
+        }
+    },
+    "categories" : {
+        "ihave" : [
+            {
+                "title" : "A Skill",
+                "id" : "skill",
+                "selected" : false
+            },
+            {
+                "title" : "Goodwill",
+                "id" : "goodwill",
+                "selected" : "selected"
+            }
+        ],
+        "skills" : [
+            "Web Design",
+            "Writing",
+            "Speaking Syrian",
+            "Bike Riding",
+            "Cooking",
+            "Hair dressing"
+        ],
+        "countries" : [
+        "I'd like to help...",
+        "United States of America","Afghanistan","Albania","Algeria","Andorra","Angola","Antigua & Deps","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina","Burma","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Central African Rep","Chad","Chile","People's Republic of China","Republic of China","Colombia","Comoros","Democratic Republic of the Congo","Republic of the Congo","Costa Rica,","Croatia","Cuba","Cyprus","Czech Republic","Danzig","Denmark","Djibouti","Dominica","Dominican Republic","East Timor","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Gaza Strip","The Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Holy Roman Empire","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Republic of Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jonathanland","Jordan","Kazakhstan","Kenya","Kiribati","North Korea","South Korea","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mount Athos","Mozambique","Namibia","Nauru","Nepal","Newfoundland","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Ottoman Empire","Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Prussia","Qatar","Romania","Rome","Russian Federation","Rwanda","St Kitts & Nevis","St Lucia","Saint Vincent & the","Grenadines","Samoa","San Marino","Sao Tome & Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","Spain","Sri Lanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"
+        ]
+    },
+    "challenges" : [
+        {
+            "title" : "Get the message out there",
+            "author" : "Jeff",
+            "avatar" : "jeff",
+            "location" : "  Anywhere",
+            "time" : "1 minute",
+            "enddate" : "28 September 2016",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "Retweet the Syrian Refugee Counter"
+        },
+       {
+            "title" : "Offer a compliment",
+            "author" : "Julie",
+            "avatar" : "flo",
+            "location" : "Anywhere",
+            "time" : "5 minutes",
+            "enddate" : "unlimited",
+            "activeparticipants" : 50,
+            "participantlimit" : false ,
+            "description" : "A simple compliment can make all the differnce to someone's day, and their state of mind. Take a minute and pay somebody one. It's free!"
+        },
+        {
+            "title" : "Be a phone charger",
+            "author" : "Liz",
+            "avatar" : "flo",
+            "location" : "South Sudan",
+            "time" : "4 hours",
+            "enddate" : "1 August 2016",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "If you have an open door and an extension lead, help your neighbours keep topped up."
+        },
+       {
+            "title" : "Language Exchange",
+            "author" : "Frank",
+            "avatar" : "magoo",
+            "location" : "Anywhere",
+            "time" : "60 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : 100,
+            "description" : "Teach someone in need basic english"
+        },
+       {
+            "title" : "Food Drive",
+            "author" : "Jack",
+            "avatar" : "harry",
+            "location" : "London",
+            "time" : "30 min",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "FOod drive for Syrian Refuggees at your local supermarket"
+        },
+       {
+            "title" : "Code for Change",
+            "author" : "Lee",
+            "avatar" : "peter",
+            "location" : "anywhere",
+            "time" : "60 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : 100,
+            "description" : "UNICEF need help coding this section of there website by Sept.28th"
+        },
+       {
+            "title" : "Cook for Foodcycle",
+            "author" : "Jeff",
+            "avatar" : "jeff",
+            "location" : "Bristol",
+            "time" : "120 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 2,
+            "participantlimit" : 10,
+            "description" : "We need 10 cooks to help with Foodcycle breakfast service for Syrian refugees. No experiance needed."
+        },
+       {
+            "title" : "Help out at a Refugee Camp",
+            "author" : "Red Cross",
+            "avatar" : "redcross",
+            "location" : "Beirut",
+            "time" : " 120 minutes",
+            "enddate" : "unlimited",
+            "activeparticipants" : 20,
+            "participantlimit" : 1000,
+            "description" : "Any and all help needed at the RED CROSS Beirut Refugee. Everything from laundrey and food to medical help welcome. "
+        },
+       {
+            "title" : "Donate 10$ to UN Syrian Relief fund",
+            "author" : "UN",
+            "avatar" : "redcross",
+            "location" : "anywhere",
+            "time" : "5 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "Donate 10$ to UN Syrian Relief fund"
+        },
+       {
+            "title" : "Red Cross Clothes drive",
+            "author" : "Florence",
+            "avatar" : "flo",
+            "location" : "Europe",
+            "time" : "30 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "Clear out your wardrobe, donate your old clothes to the Red Cross. COllection day nation wide wednesday "
+        },
+        {
+            "title" : "Uber Food and Clothes Challenge",
+            "author" : "Uber",
+            "avatar" : "magoo",
+            "location" : "London",
+            "time" : "30 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 50,
+            "participantlimit" : false,
+            "description" : "Uber is running a FOod and Clothes Challenge for the Syrian Refuges, they will come collect FROM, just click this link and set up a time and collection spot. "
+        },
+        {
+            "title" : "Give a haircut",
+            "author" : "Vicki",
+            "avatar" : "flo",
+            "location" : "anywhere",
+            "time" : "30 minutes",
+            "enddate" : "28 September",
+            "activeparticipants" : 5,
+            "participantlimit" : 10,
+            "description" : "We're getting a crack team of stylists down to dover to help raise spirits. A haircut can make you feel better."
+        }
+
+    ]
+}
