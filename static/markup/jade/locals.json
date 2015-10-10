@@ -16,5 +16,11 @@
             "id" : "challenges",
             "icon" : "user"
         }
+    },
+    "posttypes": {
+        "blogpost" : "Post",
+        "appointment": "Appt.",
+        "mood" : "Mood",
+        "symptom" : "Symptom"
     }
 }

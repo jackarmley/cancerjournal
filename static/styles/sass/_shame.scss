@@ -3,3 +3,65 @@
  * Add quick changes here, to be incorperated properly at a later point
  */
 
+$options: red, green, blue, red;
+$optionsize: 6rem;
+
+.menu{
+    @include setsize($optionsize);
+    position: fixed;
+    bottom: $optionsize;
+    left: 50%;
+    margin-left: -($optionsize / 2);
+    ul{
+        list-style: none;
+    }
+    li{
+        display: inline;
+    }
+    a{
+        @include setsize($optionsize);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 100%;
+        line-height: $optionsize;
+        text-decoration: none;
+        text-align: center;
+        color: color(white);
+    }
+    &-trigger{
+        z-index: 1;
+        background: color(link);
+    }
+    &-option{
+        $i: 0;
+        $l: length($options);
+        @for $i from 1 through $l{
+            &:nth-child(#{$l}n + #{$i}) a{
+                background: nth($options,$i);
+                transition-delay: .1 * $i#{'s'};
+            }
+            $i: $i + 1;
+        }
+        a{
+            transition: transform .1s ease;
+        }
+    }
+    &.is-active{
+        .menu-option{
+            &:nth-child(1) a{
+                transform: translate(-($optionsize + 1rem),0);
+            }
+            &:nth-child(2) a{
+                transform: translate(-(($optionsize / 2) + 1rem),-($optionsize + 1rem));
+            }
+            &:nth-child(3) a{
+                transform: translate((($optionsize / 2) + 1rem),-($optionsize + 1rem));
+            }
+            &:nth-child(4) a{
+                transform: translate(($optionsize + 1rem),0);
+            }
+        }
+    }
+}

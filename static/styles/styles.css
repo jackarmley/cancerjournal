@@ -698,3 +698,84 @@ head {
 	font-family: '{""grain"": "(min-width:12.5em)",""pebble"": "(min-width:37.5em)",""mountain"": "(min-width:50em)",""eagleeyes"": "(min-device-pixel-ratio:2) and (min-resolution:192dpi)",""-webkit-eagleeyes"": "(-webkit-min-device-pixel-ratio:2) and (-webkit-min-resolution:192dpi)"}';
 }
 
+.menu {
+	width: 6rem;
+	height: 6rem;
+	position: fixed;
+	bottom: 6rem;
+	left: 50%;
+	margin-left: -3rem;
+}
+
+.menu ul {
+	list-style: none;
+}
+
+.menu li {
+	display: inline;
+}
+
+.menu a {
+	width: 6rem;
+	height: 6rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 100%;
+	line-height: 6rem;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+}
+
+.menu-trigger {
+	z-index: 1;
+	background: #0072bc;
+}
+
+.menu-option:nth-child(4n+1) a {
+	background: red;
+	transition-delay: 0.1s;
+}
+
+.menu-option:nth-child(4n+2) a {
+	background: green;
+	transition-delay: 0.2s;
+}
+
+.menu-option:nth-child(4n+3) a {
+	background: blue;
+	transition-delay: 0.3s;
+}
+
+.menu-option:nth-child(4n+4) a {
+	background: red;
+	transition-delay: 0.4s;
+}
+
+.menu-option a {
+	transition: -webkit-transform .1s ease;
+	transition: transform .1s ease;
+}
+
+.menu.is-active .menu-option:nth-child(1) a {
+	-webkit-transform: translate(-7rem, 0);
+	transform: translate(-7rem, 0);
+}
+
+.menu.is-active .menu-option:nth-child(2) a {
+	-webkit-transform: translate(-4rem, -7rem);
+	transform: translate(-4rem, -7rem);
+}
+
+.menu.is-active .menu-option:nth-child(3) a {
+	-webkit-transform: translate(4rem, -7rem);
+	transform: translate(4rem, -7rem);
+}
+
+.menu.is-active .menu-option:nth-child(4) a {
+	-webkit-transform: translate(7rem, 0);
+	transform: translate(7rem, 0);
+}
+
