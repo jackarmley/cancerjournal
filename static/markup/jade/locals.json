@@ -21,6 +21,6 @@
         "blogpost" : "Post",
         "appointment": "Appt.",
         "mood" : "Mood",
-        "symptom" : "Symptom"
+        "store" : "Store"
     }
 }

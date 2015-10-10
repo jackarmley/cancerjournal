@@ -10,3 +10,11 @@
 head{
     font-family: pointlist($breakpoints);
 }
+html{
+    background:
+        linear-gradient(to bottom, $mint, $icecream) fixed
+    ;
+}
+body{
+    padding: 10rem 2rem;
+}
