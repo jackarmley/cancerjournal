@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   jsonapi_resources :users
   jsonapi_resources :blog_posts
-
+  jsonapi_resources :appointments
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
