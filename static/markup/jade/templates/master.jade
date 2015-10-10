@@ -1,0 +1,21 @@
+block includes
+
+block vars
+    -var viewclass = 'default';
+
+doctype html
+html(lang='en-au')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0')
+    title= locals.projectinfo.title + ' - ' + locals.projectinfo.tagline2
+    link(rel="stylesheet" href="static/styles/styles.css")
+body(class=viewclass)
+    include ../partials/header
+    main(role="main").page-content
+        block pagecontent
+    block scripts
+        script(src="static/scripts/jquery.js")
+        script(src="static/scripts/handlebars.js")
+        script(src="static/scripts/app.js")
