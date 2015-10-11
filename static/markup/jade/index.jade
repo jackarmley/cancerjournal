@@ -1,28 +1,37 @@
 extend templates/master
 
 block pagecontent
+    script#entry-template(type="text/x-handlebars-template").
+        <div class='entry entry--cat-{{category}}'>
+            <div class='entry-inner'>
+                <h2>{{title}}</h2>
+                <p>{{date}}</p>
+            </div>
+        </div>
     .menu
         a.menu-trigger(role="button" href="") +
         ul
             -each val, index in locals.posttypes
                 li.menu-option: a(href="#", data-type=index)
-    .entries.layoutwrap
+    .layoutwrap
         h2 Andrew's story
         -each val, index in locals.posttypes
             div(class='entry entry--add #{index} entry--cat-#{index}' data-type=index)
                 .entry-inner
                     h2= val.title
-                    form
+                    form.entry-form
+                        input(type='hidden' id='category' value=index)
                         -each fieldval, index in val.fields
                             .fieldgroup
                                 -if(fieldval.type !== 'textarea')
                                     label(for=fieldval.id)= fieldval.title
                                     input(type=fieldval.type id=fieldval.id)
                         button(type='submit') Submit
-
-        -each val, index in locals.entries
-            div(class='entry entry--cat-#{val.category}')
-                .entry-inner
-                    h2= val.title
-                    p= val.date
-                    a.share-btn(href='') Share
+        .entries
+            #entry-template
+            -each val, index in locals.entries
+                div(class='entry entry--cat-#{val.category}')
+                    .entry-inner
+                        h2= val.title
+                        p= val.date
+                        a.share-btn(href='') Share

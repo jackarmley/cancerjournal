@@ -11,11 +11,10 @@ head
     meta(name='viewport', content='width=device-width,initial-scale=1.0')
     title= locals.projectinfo.title + ' - ' + locals.projectinfo.tagline2
     link(rel="stylesheet" href="static/styles/styles.css")
+    script(src="static/scripts/jquery.js")
+    script(src="static/scripts/handlebars.js")
+    script(src="static/scripts/app.js")
 body(class=viewclass)
     include ../partials/header
     main(role="main").page-content
         block pagecontent
-    block scripts
-        script(src="static/scripts/jquery.js")
-        script(src="static/scripts/handlebars.js")
-        script(src="static/scripts/app.js")

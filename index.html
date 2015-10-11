@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Cancer Journal - undefined</title>
   <link rel="stylesheet" href="static/styles/styles.css">
+  <script src="static/scripts/jquery.js"></script>
+  <script src="static/scripts/handlebars.js"></script>
+  <script src="static/scripts/app.js"></script>
 </head>
 <body class="default">
   <header role="banner" class="page-header">
@@ -14,6 +17,14 @@
     </div>
   </header>
   <main role="main" class="page-content">
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class='entry entry--cat-{{category}}'>
+          <div class='entry-inner'>
+              <h2>{{title}}</h2>
+              <p>{{date}}</p>
+          </div>
+      </div>
+    </script>
     <div class="menu"><a role="button" href="" class="menu-trigger">+</a>
       <ul>
         <li class="menu-option"><a href="#" data-type="post"></a></li>
@@ -22,12 +33,13 @@
         <li class="menu-option"><a href="#" data-type="store"></a></li>
       </ul>
     </div>
-    <div class="entries layoutwrap">
+    <div class="layoutwrap">
       <h2>Andrew's story</h2>
       <div data-type="post" class="entry entry--add post entry--cat-post">
         <div class="entry-inner">
           <h2>Post</h2>
-          <form>
+          <form class="entry-form">
+            <input type="hidden" id="category" value="post">
             <div class="fieldgroup">
               <label for="title">Title</label>
               <input type="text" id="title">
@@ -45,7 +57,8 @@
       <div data-type="appt" class="entry entry--add appt entry--cat-appt">
         <div class="entry-inner">
           <h2>Appointment</h2>
-          <form>
+          <form class="entry-form">
+            <input type="hidden" id="category" value="appt">
             <div class="fieldgroup">
               <label for="title">Title</label>
               <input type="text" id="title">
@@ -65,7 +78,8 @@
       <div data-type="mood" class="entry entry--add mood entry--cat-mood">
         <div class="entry-inner">
           <h2>Mood</h2>
-          <form>
+          <form class="entry-form">
+            <input type="hidden" id="category" value="mood">
             <div class="fieldgroup">
               <label for="title">Title</label>
               <input type="text" id="title">
@@ -89,7 +103,8 @@
       <div data-type="store" class="entry entry--add store entry--cat-store">
         <div class="entry-inner">
           <h2>Store</h2>
-          <form>
+          <form class="entry-form">
+            <input type="hidden" id="category" value="store">
             <div class="fieldgroup">
               <label for="title">Title</label>
               <input type="text" id="title">
@@ -110,33 +125,33 @@
           </form>
         </div>
       </div>
-      <div class="entry entry--cat-appt">
-        <div class="entry-inner">
-          <h2>doctor appointment</h2>
-          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+      <div class="entries">
+        <div id="entry-template"></div>
+        <div class="entry entry--cat-appt">
+          <div class="entry-inner">
+            <h2>doctor appointment</h2>
+            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+          </div>
         </div>
-      </div>
-      <div class="entry entry--cat-store">
-        <div class="entry-inner">
-          <h2>test results</h2>
-          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        <div class="entry entry--cat-store">
+          <div class="entry-inner">
+            <h2>test results</h2>
+            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+          </div>
         </div>
-      </div>
-      <div class="entry entry--cat-mood">
-        <div class="entry-inner">
-          <h2>I'm feeling great today</h2>
-          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        <div class="entry entry--cat-mood">
+          <div class="entry-inner">
+            <h2>I'm feeling great today</h2>
+            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+          </div>
         </div>
-      </div>
-      <div class="entry entry--cat-post">
-        <div class="entry-inner">
-          <h2>Getting used to blood tests</h2>
-          <p>10/2/13</p><a href="" class="share-btn">Share</a>
+        <div class="entry entry--cat-post">
+          <div class="entry-inner">
+            <h2>Getting used to blood tests</h2>
+            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+          </div>
         </div>
       </div>
     </div>
   </main>
-  <script src="static/scripts/jquery.js"></script>
-  <script src="static/scripts/handlebars.js"></script>
-  <script src="static/scripts/app.js"></script>
 </body>
