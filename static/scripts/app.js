@@ -37,6 +37,9 @@ $(document).ready(function(){
         });
     });
 
+    $('.share-btn').click(function(e){
+        e.preventDefault();
+    });
 
     $('.entry-form').each(function(){
         var $self = $(this);
