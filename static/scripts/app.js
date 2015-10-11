@@ -9,7 +9,7 @@ $(document).ready(function(){
     var context = {title: "My New Post", body: "This is my first post!"};
     var errormessage =
         '<div class="error">' +
-            'Be sure to add a title and a date' +
+            'Be sure to add a title' +
         '</div>'
     ;
     var menuActive = false;
@@ -55,7 +55,7 @@ $(document).ready(function(){
                 obj[inputlabel] = inputval;
             }
             console.log(obj,vals.length,vals);
-            if(vals[1]!== '' && vals[2]!== ''){
+            if(vals[1]!== ''){
                 var html = template(obj);
                 $('.entries').prepend(html);
                 $self.closest('.entry--add').removeClass('is-active');

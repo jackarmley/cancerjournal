@@ -5,7 +5,11 @@ block pagecontent
         <div class='entry entry--cat-{{category}}'>
             <div class='entry-inner'>
                 <h2>{{title}}</h2>
-                <p class='icon-calendar-empty'>{{date}}</p>
+                {{#if date}}
+                    <p class='icon-calendar-empty'>{{date}}</p>
+                {{else}}
+                    <p class='icon-calendar-empty'>Today</p>
+                {{/if}}
                 <!-- Appt -->
                 {{#if location}}
                     <p class='icon-location'>{{location}}</p>
