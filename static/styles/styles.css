@@ -716,7 +716,7 @@ tfoot td {
 }
 
 head {
-	font-family: '{""grain"": "(min-width:12.5em)",""pebble"": "(min-width:37.5em)",""mountain"": "(min-width:50em)",""eagleeyes"": "(min-device-pixel-ratio:2) and (min-resolution:192dpi)",""-webkit-eagleeyes"": "(-webkit-min-device-pixel-ratio:2) and (-webkit-min-resolution:192dpi)"}';
+	font-family: '{""grain"": "(min-width:12.5em)",""pebble"": "(min-width:25em)",""mountain"": "(min-width:50em)",""eagleeyes"": "(min-device-pixel-ratio:2) and (min-resolution:192dpi)",""-webkit-eagleeyes"": "(-webkit-min-device-pixel-ratio:2) and (-webkit-min-resolution:192dpi)"}';
 }
 
 html {
@@ -999,6 +999,10 @@ body {
 	display: none;
 }
 
+.entry h2 {
+	font-size: 1.5em;
+}
+
 .entry-inner {
 	position: relative;
 	overflow: hidden;
@@ -1116,5 +1120,13 @@ body {
 
 .entypo-folder a {
 	color: #333;
+}
+
+@media (min-width: 25em) {
+
+.entry h2 {
+	font-size: 2em;
+}
+
 }
 

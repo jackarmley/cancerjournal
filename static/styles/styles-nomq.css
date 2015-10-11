@@ -716,7 +716,7 @@ tfoot td {
 }
 
 head {
-	font-family: '{""grain"": "(min-width:12.5em)",""pebble"": "(min-width:37.5em)",""mountain"": "(min-width:50em)",""eagleeyes"": "(min-device-pixel-ratio:2) and (min-resolution:192dpi)",""-webkit-eagleeyes"": "(-webkit-min-device-pixel-ratio:2) and (-webkit-min-resolution:192dpi)"}';
+	font-family: '{""grain"": "(min-width:12.5em)",""pebble"": "(min-width:25em)",""mountain"": "(min-width:50em)",""eagleeyes"": "(min-device-pixel-ratio:2) and (min-resolution:192dpi)",""-webkit-eagleeyes"": "(-webkit-min-device-pixel-ratio:2) and (-webkit-min-resolution:192dpi)"}';
 }
 
 html {
@@ -997,6 +997,11 @@ body {
 
 .public-profile .entry {
 	display: none;
+}
+
+.entry h2 {
+	font-size: 1.5em;
+	font-size: 2em;
 }
 
 .entry-inner {

@@ -136,6 +136,12 @@ $optionsize: 6rem;
     .public-profile &{
         display: none;
     }
+    h2{
+        font-size: 1.5em;
+        @include breakpoint('pebble'){
+            font-size: 2em;
+        }
+    }
     &-inner{
         @extend %clearfix;
         position: relative;
