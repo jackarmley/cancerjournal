@@ -36,6 +36,8 @@ block pagecontent
                 li.menu-option: a(href="#", data-type=index title='Add a new ' + index + ' to your story')
     .layoutwrap
         h2.entries-title
+        p.story-desc.
+            Tom has been recording his journey and would like to share it with you. Have a read and send Tom a message.
         -each val, index in locals.posttypes
             div(class='entry entry--add #{index} entry--cat-#{index}' data-type=index)
                 .entry-inner
