@@ -12,6 +12,15 @@
     width: auto;
     max-width: 60rem;
     margin: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/**
+ * Buttons
+ */
+.btn{
+    display: inline-block;
 }
 
 /**
@@ -23,7 +32,7 @@ $optionsize: 6rem;
 .menu{
     @include setsize($optionsize);
     position: fixed;
-    bottom: $optionsize;
+    bottom: 2rem;
     left: 50%;
     z-index: 10;
     margin-left: -($optionsize / 2);
@@ -49,6 +58,10 @@ $optionsize: 6rem;
     &-trigger{
         z-index: 1;
         background: $mint;
+        font-size: 2em;
+        &:hover{
+            background-color: darken($mint,10%);
+        }
     }
     &-option{
         $i: 0;
@@ -60,11 +73,14 @@ $optionsize: 6rem;
                 &:before{
                     background-image: url('../images/#{nth($options,$i)}.svg');
                 }
+                &:hover{
+                    background: darken(color(nth($options,$i)),10%)  ;
+                }
             }
             $i: $i + 1;
         }
         a{
-            transition: all .1s ease;
+            transition: transform .1s ease;
             transform: scale(.5);
             &:before{
                 @include setsize(100%);
@@ -97,9 +113,29 @@ $optionsize: 6rem;
 /**
  * Entry
  */
+.entries-title{
+    margin: 0;
+    padding: 4rem 0;
+    text-align: center;
+    color: white;
+    &:before{
+        content:'My story';
+        .public-profile &{
+            content:'Tom\'s Story';
+        }
+    }
+}
 .entry{
     margin-bottom: 2rem;
     overflow: hidden;
+    &.show-public{
+        .public-profile &{
+            display: block;
+        }
+    }
+    .public-profile &{
+        display: none;
+    }
     &-inner{
         @extend %clearfix;
         position: relative;
@@ -140,6 +176,19 @@ $optionsize: 6rem;
             max-height: 100rem;
             margin-bottom: 2rem;
         }
+        #emoji{
+            @include setsize(7rem);
+            margin-bottom: 1.5rem;
+            border-radius: 100%;
+            background: $sky;
+            font-size: 3em;
+            line-height: 7rem;
+            text-align: center;
+            border: none;
+        }
+        label[for="emoji"]{
+            display: none;
+        }
     }
 }
 
@@ -151,6 +200,16 @@ $optionsize: 6rem;
     color: white;
 }
 
+.emoji{
+    @include setsize(7rem);
+    margin-bottom: 1.5rem;
+    border-radius: 100%;
+    background: $sky;
+    font-size: 3em;
+    line-height: 7rem;
+    text-align: center;
+}
+
 
 /**
  * Share
@@ -158,12 +217,16 @@ $optionsize: 6rem;
 .share-btn{
     display: inline-block;
     float: right;
-    &:before{
-        @include setsize(1.5em);
-        content:' ';
-        display: inline-block;
-        vertical-align: bottom;
-        margin-right: .5rem;
-        background: url('../images/share.svg');
+    padding: .5em;
+    border: .2rem solid color('link');
+    border-radius: .5rem;
+    text-decoration: none;
+
+    &:hover{
+        border-color: color('linkactive');
     }
+}
+
+.entypo-folder a{
+    color: color('default');
 }

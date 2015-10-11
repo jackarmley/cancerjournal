@@ -12,12 +12,18 @@ $(document).ready(function(){
             'Be sure to add a title and a date' +
         '</div>'
     ;
+    var menuActive = false;
 
     $('.menu-trigger').click(function(e){
         var $self = $(this),
-            activeClass = 'is-active',
-            active = true;
-        $self.parent().addClass(activeClass);
+            activeClass = 'is-active';
+        if(!menuActive){
+            menuActive = true;
+            $self.parent().addClass(activeClass);
+        }else{
+            menuActive = false;
+            $self.parent().removeClass(activeClass);
+        }
         e.preventDefault();
     });
     $('.menu-option a').each(function(){
@@ -31,9 +37,12 @@ $(document).ready(function(){
         });
     });
 
+
     $('.entry-form').each(function(){
         var $self = $(this);
         var hasError = false;
+        var date = new Date().toLocaleString().split(',')[0];
+        $(this).find('#date').value = date;
         $(this).find('button').click(function(e){
             var obj = {},
                 inputs = $self.find('input'),
@@ -59,6 +68,53 @@ $(document).ready(function(){
             e.preventDefault();
         });
     });
+
+var profileMenuActive = false;
+    var $window = $(window);
+    var $header = $('.page-header');
+    var props = {
+      headerheight : $header.height(),
+      stickyclass : 'sticky'
+    }
+
+    function setsticky(){
+      var pos = $window.scrollTop();
+      if(pos >= props.headerheight){
+        $header.addClass(props.stickyclass);
+      }else{
+        $header.removeClass(props.stickyclass);
+      }
+    }
+
+    $window.on('scroll', setsticky);;
+
+
+ $('.profileinfo-name .label').click(function(e){
+    var $self = $(this),
+        activeClass = 'is-active';
+    if(!profileMenuActive){
+        profileMenuActive = true;
+        $self.parent().addClass(activeClass);
+    }else{
+        profileMenuActive = false;
+        $self.parent().removeClass(activeClass);
+    }
+    e.preventDefault();
+});
+
+var publicProfile = false;
+ $('.profileinfo-menu a').click(function(e){
+    var $self = $(this),
+        activeClass = 'public-profile';
+    if(!publicProfile){
+        publicProfile = true;
+        $('body').addClass(activeClass);
+    }else{
+        publicProfile = false;
+        $('body').removeClass(activeClass);
+    }
+    e.preventDefault();
+});
 
 });
 

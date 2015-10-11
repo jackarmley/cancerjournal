@@ -5,33 +5,65 @@ block pagecontent
         <div class='entry entry--cat-{{category}}'>
             <div class='entry-inner'>
                 <h2>{{title}}</h2>
-                <p>{{date}}</p>
+                <p class='icon-calendar-empty'>{{date}}</p>
+                <!-- Appt -->
+                {{#if location}}
+                    <p class='icon-location'>{{location}}</p>
+                {{/if}}
+                <!-- Mood -->
+                {{#if emoji}}
+                    <p class='emoji'>{{emoji}}</p>
+                {{/if}}
+                <!-- Store -->
+                {{#if type}}
+                    <p class='icon-tags'>{{type}}</p>
+                {{/if}}
+                {{#if file}}
+                    <p class='entypo-folder'><a href="">{{file}}</a></p>
+                {{/if}}
+                {{desc}}
+                <a class='share-btn icon-share' href=''>Share</a>
             </div>
         </div>
     .menu
         a.menu-trigger(role="button" href="") +
         ul
             -each val, index in locals.posttypes
-                li.menu-option: a(href="#", data-type=index)
+                li.menu-option: a(href="#", data-type=index title='Add a new ' + index + ' to your story')
     .layoutwrap
-        h2 Andrew's story
+        h2.entries-title
         -each val, index in locals.posttypes
             div(class='entry entry--add #{index} entry--cat-#{index}' data-type=index)
                 .entry-inner
-                    h2= val.title
+                    h2 Add a #{val.title} to your story
                     form.entry-form
                         input(type='hidden' id='category' value=index)
                         -each fieldval, index in val.fields
                             .fieldgroup
                                 -if(fieldval.type !== 'textarea')
                                     label(for=fieldval.id)= fieldval.title
-                                    input(type=fieldval.type id=fieldval.id)
-                        button(type='submit') Submit
+                                    input(type=fieldval.type id=fieldval.id value=fieldval.value)
+                                -else
+                                    label(for=fieldval.id)= fieldval.title
+                                    textarea(type=fieldval.type id=fieldval.id)
+                        .fieldgroup
+                            label(for='makepublic-' + index)
+                                | Add to my sharable story
+                                input(type='checkbox' id='makepublic-' + index checked)
+                        button.btn(type='submit') Submit
         .entries
             #entry-template
             -each val, index in locals.entries
-                div(class='entry entry--cat-#{val.category}')
+                div(class='entry entry--cat-#{val.category} #{val.public}')
                     .entry-inner
                         h2= val.title
-                        p= val.date
-                        a.share-btn(href='') Share
+                        p.icon-calendar-empty= val.date
+                        -if(val.category === 'appt')
+                                p.icon-location= val.location
+                        -if(val.category === 'mood')
+                            p.emoji= val.emoji
+                        -if(val.category === 'store')
+                            p.icon-tags= val.type
+                            p.entypo-folder: a(href='')= val.file
+                        p= val.desc
+                        a.share-btn.icon-share(href='') Share

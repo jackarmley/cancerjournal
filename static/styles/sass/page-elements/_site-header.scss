@@ -9,16 +9,24 @@
     z-index: 10;
     width: 100%;
     padding: 1rem 0;
-    background: fade-out(white,.2);
+    background: fade-out(white,.1);
     box-shadow: 0 .5rem fade-out(black,.8);
     .layoutwrap{
         display: flex;
-        align-content: space-between;
+        justify-content: space-between;
+    }
+    &.sticky{
+        .site-logo{
+            @include setsize(2rem);
+        }
+        .profileinfo-icon{
+            @include setsize(2rem);
+        }
     }
 }
 
 .site-logo{
-    @include setsize(4rem);
+    @include setsize(6rem);
     background: url('../images/logo.svg') no-repeat center center/contain;
     text-indent: 100%;
     white-space: nowrap;
@@ -26,4 +34,48 @@
 }
 .profileinfo{
     width: auto;
+    margin: auto 0;
+    > *{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &-icon{
+        @include setsize(4rem);
+        margin-right: 2rem;
+        background: url('../images/avatar.svg') no-repeat center center/contain;
+    }
+    &-name{
+        position: relative;
+        color: $mint;
+        &.is-active{
+            .profileinfo-menu{
+                display: block;
+            }
+        }
+    }
+        .label{
+            text-decoration: none;
+        }
+        &-menu{
+            position: absolute;
+            top: calc(100% + 2rem);
+            right: 2rem;
+            display: none;
+            list-style: none;
+            width: 20rem;
+            background-color: white;
+            border-radius: .5rem;
+            &:before{
+                @include triangle(top,white,1rem);
+                position: absolute;
+                top: -2rem;
+                right: .5rem;
+            }
+            a{
+                display: block;
+                padding: 1rem 2rem;
+                text-decoration: none;
+            }
+        }
+
 }

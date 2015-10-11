@@ -13,7 +13,13 @@
 <body class="default">
   <header role="banner" class="page-header">
     <div class="layoutwrap"><a href="./" class="site-logo">Cancer Journal</a>
-      <div class="profileinfo"><span class="profileinfo-name">Andrew</span></div>
+      <div class="profileinfo"><span class="profileinfo-icon"></span>
+        <div class="profileinfo-name"><a href="#" class="label icon-down-open">Tom</a>
+          <ul class="profileinfo-menu">
+            <li><a href="">Your sharable story</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
   <main role="main" class="page-content">
@@ -21,23 +27,40 @@
       <div class='entry entry--cat-{{category}}'>
           <div class='entry-inner'>
               <h2>{{title}}</h2>
-              <p>{{date}}</p>
+              <p class='icon-calendar-empty'>{{date}}</p>
+              <!-- Appt -->
+              {{#if location}}
+                  <p class='icon-location'>{{location}}</p>
+              {{/if}}
+              <!-- Mood -->
+              {{#if emoji}}
+                  <p class='emoji'>{{emoji}}</p>
+              {{/if}}
+              <!-- Store -->
+              {{#if type}}
+                  <p class='icon-tags'>{{type}}</p>
+              {{/if}}
+              {{#if file}}
+                  <p class='entypo-folder'><a href="">{{file}}</a></p>
+              {{/if}}
+              {{desc}}
+              <a class='share-btn icon-share' href=''>Share</a>
           </div>
       </div>
     </script>
     <div class="menu"><a role="button" href="" class="menu-trigger">+</a>
       <ul>
-        <li class="menu-option"><a href="#" data-type="post"></a></li>
-        <li class="menu-option"><a href="#" data-type="appt"></a></li>
-        <li class="menu-option"><a href="#" data-type="mood"></a></li>
-        <li class="menu-option"><a href="#" data-type="store"></a></li>
+        <li class="menu-option"><a href="#" data-type="post" title="Add a new post to your story"></a></li>
+        <li class="menu-option"><a href="#" data-type="appt" title="Add a new appt to your story"></a></li>
+        <li class="menu-option"><a href="#" data-type="mood" title="Add a new mood to your story"></a></li>
+        <li class="menu-option"><a href="#" data-type="store" title="Add a new store to your story"></a></li>
       </ul>
     </div>
     <div class="layoutwrap">
-      <h2>Andrew's story</h2>
+      <h2 class="entries-title"></h2>
       <div data-type="post" class="entry entry--add post entry--cat-post">
         <div class="entry-inner">
-          <h2>Post</h2>
+          <h2>Add a Post to your story</h2>
           <form class="entry-form">
             <input type="hidden" id="category" value="post">
             <div class="fieldgroup">
@@ -46,17 +69,24 @@
             </div>
             <div class="fieldgroup">
               <label for="date">Date</label>
-              <input type="date" id="date">
+              <input type="date" id="date" value="06/10/2015">
             </div>
             <div class="fieldgroup">
+              <label for="desc">Description</label>
+              <textarea type="textarea" id="desc"></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <div class="fieldgroup">
+              <label for="makepublic-post">Add to my sharable story
+                <input type="checkbox" id="makepublic-post" checked>
+              </label>
+            </div>
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
       </div>
       <div data-type="appt" class="entry entry--add appt entry--cat-appt">
         <div class="entry-inner">
-          <h2>Appointment</h2>
+          <h2>Add a Appointment to your story</h2>
           <form class="entry-form">
             <input type="hidden" id="category" value="appt">
             <div class="fieldgroup">
@@ -65,19 +95,28 @@
             </div>
             <div class="fieldgroup">
               <label for="date">Date</label>
-              <input type="date" id="date">
+              <input type="date" id="date" value="06/10/2015">
             </div>
             <div class="fieldgroup">
               <label for="location">Location</label>
               <input type="input" id="location">
             </div>
-            <button type="submit">Submit</button>
+            <div class="fieldgroup">
+              <label for="desc">Description</label>
+              <textarea type="textarea" id="desc"></textarea>
+            </div>
+            <div class="fieldgroup">
+              <label for="makepublic-appt">Add to my sharable story
+                <input type="checkbox" id="makepublic-appt" checked>
+              </label>
+            </div>
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
       </div>
       <div data-type="mood" class="entry entry--add mood entry--cat-mood">
         <div class="entry-inner">
-          <h2>Mood</h2>
+          <h2>Add a Mood to your story</h2>
           <form class="entry-form">
             <input type="hidden" id="category" value="mood">
             <div class="fieldgroup">
@@ -86,7 +125,7 @@
             </div>
             <div class="fieldgroup">
               <label for="date">Date</label>
-              <input type="date" id="date">
+              <input type="date" id="date" value="06/10/2015">
             </div>
             <div class="fieldgroup">
               <label for="desc">Description</label>
@@ -94,15 +133,20 @@
             </div>
             <div class="fieldgroup">
               <label for="emoji">Emoji</label>
-              <input type="text" id="emoji">
+              <input type="text" id="emoji" value=":)">
             </div>
-            <button type="submit">Submit</button>
+            <div class="fieldgroup">
+              <label for="makepublic-mood">Add to my sharable story
+                <input type="checkbox" id="makepublic-mood" checked>
+              </label>
+            </div>
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
       </div>
       <div data-type="store" class="entry entry--add store entry--cat-store">
         <div class="entry-inner">
-          <h2>Store</h2>
+          <h2>Add a Store to your story</h2>
           <form class="entry-form">
             <input type="hidden" id="category" value="store">
             <div class="fieldgroup">
@@ -111,7 +155,11 @@
             </div>
             <div class="fieldgroup">
               <label for="date">Date</label>
-              <input type="date" id="date">
+              <input type="date" id="date" value="06/10/2015">
+            </div>
+            <div class="fieldgroup">
+              <label for="desc">Description</label>
+              <textarea type="textarea" id="desc"></textarea>
             </div>
             <div class="fieldgroup">
               <label for="type">Type</label>
@@ -121,34 +169,47 @@
               <label for="file">File</label>
               <input type="file" id="file">
             </div>
-            <button type="submit">Submit</button>
+            <div class="fieldgroup">
+              <label for="makepublic-store">Add to my sharable story
+                <input type="checkbox" id="makepublic-store" checked>
+              </label>
+            </div>
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
       </div>
       <div class="entries">
         <div id="entry-template"></div>
-        <div class="entry entry--cat-appt">
-          <div class="entry-inner">
-            <h2>doctor appointment</h2>
-            <p>10/2/13</p><a href="" class="share-btn">Share</a>
-          </div>
-        </div>
-        <div class="entry entry--cat-store">
-          <div class="entry-inner">
-            <h2>test results</h2>
-            <p>10/2/13</p><a href="" class="share-btn">Share</a>
-          </div>
-        </div>
-        <div class="entry entry--cat-mood">
+        <div class="entry entry--cat-mood undefined">
           <div class="entry-inner">
             <h2>I'm feeling great today</h2>
-            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+            <p class="icon-calendar-empty">13/2/13</p>
+            <p class="emoji">:)</p>
+            <p>Had a great result today, feel much better</p><a href="" class="share-btn icon-share">Share</a>
           </div>
         </div>
-        <div class="entry entry--cat-post">
+        <div class="entry entry--cat-store undefined">
+          <div class="entry-inner">
+            <h2>Test results are in</h2>
+            <p class="icon-calendar-empty">12/2/13</p>
+            <p class="icon-tags">blood test</p>
+            <p class="entypo-folder"><a href="">scan.jpg</a></p>
+            <p>Today I received my bloodtest, and my white blood cell count is lower than last time! Keeping up te small victories!</p><a href="" class="share-btn icon-share">Share</a>
+          </div>
+        </div>
+        <div class="entry entry--cat-appt show-public">
+          <div class="entry-inner">
+            <h2>Another doctor appointment</h2>
+            <p class="icon-calendar-empty">10/2/13</p>
+            <p class="icon-location">St Mary's</p>
+            <p>Hi guys, Today I have another doctors appointment. Its just a small one this time, we are gonna chec for white blood cell content. I've been clean for a while now, but going here always makes me a little nervous. Anyway, I'm glad I could write this up before I go :)</p><a href="" class="share-btn icon-share">Share</a>
+          </div>
+        </div>
+        <div class="entry entry--cat-post show-public">
           <div class="entry-inner">
             <h2>Getting used to blood tests</h2>
-            <p>10/2/13</p><a href="" class="share-btn">Share</a>
+            <p class="icon-calendar-empty">9/2/13</p>
+            <p>Hey all, I'm getting more and more blood tests done now. I always hated needles, but am gradually getting used to them now. Which is probably a good thing because I doubt it will be my last test haha.</p><a href="" class="share-btn icon-share">Share</a>
           </div>
         </div>
       </div>

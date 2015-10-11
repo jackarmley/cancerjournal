@@ -15,7 +15,8 @@
                 "date" : {
                     "type" : "date",
                     "id" : "date",
-                    "title" : "Date"
+                    "title" : "Date",
+                    "value" : "06/10/2015"
                 },
                 "desc" : {
                     "type" : "textarea",
@@ -35,12 +36,18 @@
                 "date" : {
                     "type" : "date",
                     "id" : "date",
-                    "title" : "Date"
+                    "title" : "Date",
+                    "value" : "06/10/2015"
                 },
                 "location" : {
                     "type" : "input",
                     "id" : "location",
                     "title" : "Location"
+                },
+                "desc" : {
+                    "type" : "textarea",
+                    "id" : "desc",
+                    "title" : "Description"
                 }
             }
         },
@@ -55,7 +62,8 @@
                 "date" : {
                     "type" : "date",
                     "id" : "date",
-                    "title" : "Date"
+                    "title" : "Date",
+                    "value" : "06/10/2015"
                 },
                 "desc" : {
                     "type" : "texteara",
@@ -65,7 +73,8 @@
                 "emoji" : {
                     "type" : "text",
                     "id" : "emoji",
-                    "title" : "Emoji"
+                    "title" : "Emoji",
+                    "value" : ":)"
                 }
             }
         },
@@ -80,7 +89,13 @@
                 "date" : {
                     "type" : "date",
                     "id" : "date",
-                    "title" : "Date"
+                    "title" : "Date",
+                    "value" : "06/10/2015"
+                },
+                "desc" : {
+                    "type" : "textarea",
+                    "id" : "desc",
+                    "title" : "Description"
                 },
                 "type" : {
                     "type" : "input",
@@ -95,32 +110,37 @@
             }
         }
     },
-    "entries" : [
+ "entries" : [
         {
-            "title" : "doctor appointment",
-            "category" : "appt",
-            "date" : "10/2/13",
-            "location" : "google campus"
-        },
-        {
-            "title" : "test results",
-            "category" : "store",
-            "date" : "10/2/13",
-            "type" : "blood test",
-            "file" : "scan.jpg"
-        },
-        {
-            "title" : "I'm feeling great today",
-            "date" : "10/2/13",
-            "category" : "mood",
-            "desc" : "Had a great result today, feel much better",
-            "emoji" : ":)"
-        },
-        {
-            "title" : "Getting used to blood tests",
-            "date" : "10/2/13",
-            "category" : "post",
-            "desc" : "I always hated needles, but am gradually getting used to them"
-        }
-    ]
+          "title" : "I'm feeling great today",
+          "date" : "13/2/13",
+          "category" : "mood",
+          "desc" : "Had a great result today, feel much better",
+          "emoji" : ":)"
+      },
+      {
+          "title" : "Test results are in",
+          "category" : "store",
+          "date" : "12/2/13",
+          "type" : "blood test",
+          "file" : "scan.jpg",
+           "desc" : "Today I received my bloodtest, and my white blood cell count is lower than last time! Keeping up te small victories!"
+      },
+
+      {
+          "title" : "Another doctor appointment",
+          "public" : "show-public",
+          "category" : "appt",
+          "date" : "10/2/13",
+          "location" : "St Mary's",
+           "desc" : "Hi guys, Today I have another doctors appointment. Its just a small one this time, we are gonna chec for white blood cell content. I've been clean for a while now, but going here always makes me a little nervous. Anyway, I'm glad I could write this up before I go :)"
+      },
+      {
+          "title" : "Getting used to blood tests",
+          "public" : "show-public",
+          "date" : "9/2/13",
+          "category" : "post",
+          "desc" : "Hey all, I'm getting more and more blood tests done now. I always hated needles, but am gradually getting used to them now. Which is probably a good thing because I doubt it will be my last test haha."
+      }
+  ]
 }

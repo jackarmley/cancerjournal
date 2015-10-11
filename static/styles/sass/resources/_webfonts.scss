@@ -6,6 +6,14 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+    display: inline-block;
+    font-family: 'entypo', sans-serif;
+    margin-right: .2em;
+}
 
 @font-face {
   font-family: 'amass';
